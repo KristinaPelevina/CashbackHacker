@@ -8,12 +8,12 @@ public class CashbackHackServiceTest {
     public void shouldCalculateRemainIfAmountIsBoundary() {
         CashbackHackService service = new CashbackHackService();
 
-        int amount = 0;
+        int amount = 1000;
 
         int actual = service.remain(amount);
-        int expected = 1000;
+        int expected = 0;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     @org.junit.Test
@@ -25,19 +25,19 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected = 999;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     @org.junit.Test
     public void shouldReturnThousandWhenAmountIsZero() {
         CashbackHackService service = new CashbackHackService();
 
-        int amount = 1000;
+        int amount = 0;
 
         int actual = service.remain(amount);
-        int expected = 0;
+        int expected = 1000;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     @org.junit.Test
@@ -49,7 +49,7 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected = 900;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     @org.junit.Test
@@ -61,7 +61,7 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected = 1;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     @org.junit.Test
@@ -73,6 +73,6 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected = 1001;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 }
